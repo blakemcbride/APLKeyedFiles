@@ -1,0 +1,1153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+
+<!DOCTYPE Workspace
+[
+    <!ELEMENT Workspace (Value*,Ravel*,SymbolTable,Symbol*,StateIndicator)>
+    <!ATTLIST Workspace  wsid     CDATA #REQUIRED>
+    <!ATTLIST Workspace  year     CDATA #REQUIRED>
+    <!ATTLIST Workspace  month    CDATA #REQUIRED>
+    <!ATTLIST Workspace  day      CDATA #REQUIRED>
+    <!ATTLIST Workspace  hour     CDATA #REQUIRED>
+    <!ATTLIST Workspace  minute   CDATA #REQUIRED>
+    <!ATTLIST Workspace  second   CDATA #REQUIRED>
+    <!ATTLIST Workspace  timezone CDATA #REQUIRED>
+
+        <!ELEMENT Value (#PCDATA)>
+        <!ATTLIST Value flg    CDATA #REQUIRED>
+        <!ATTLIST Value vid    CDATA #REQUIRED>
+        <!ATTLIST Value parent CDATA #IMPLIED>
+        <!ATTLIST Value rk     CDATA #REQUIRED>
+        <!ATTLIST Value sh-0   CDATA #IMPLIED>
+        <!ATTLIST Value sh-1   CDATA #IMPLIED>
+        <!ATTLIST Value sh-2   CDATA #IMPLIED>
+        <!ATTLIST Value sh-3   CDATA #IMPLIED>
+        <!ATTLIST Value sh-4   CDATA #IMPLIED>
+        <!ATTLIST Value sh-5   CDATA #IMPLIED>
+        <!ATTLIST Value sh-6   CDATA #IMPLIED>
+        <!ATTLIST Value sh-7   CDATA #IMPLIED>
+
+        <!ELEMENT Ravel (#PCDATA)>
+        <!ATTLIST Ravel vid    CDATA #REQUIRED>
+        <!ATTLIST Ravel cells  CDATA #REQUIRED>
+
+        <!ELEMENT SymbolTable (Symbol*)>
+        <!ATTLIST SymbolTable size CDATA #REQUIRED>
+
+            <!ELEMENT Symbol (unused-name|Variable|Function|Label|Shared-Variable)*>
+            <!ATTLIST Symbol name       CDATA #REQUIRED>
+            <!ATTLIST Symbol stack-size CDATA #REQUIRED>
+
+                <!ELEMENT unused-name EMPTY>
+
+                <!ELEMENT Variable (#PCDATA)>
+                <!ATTLIST Variable vid CDATA #REQUIRED>
+
+                <!ELEMENT Function (UCS)>
+
+                <!ELEMENT Label (#PCDATA)>
+                <!ATTLIST Label value CDATA #REQUIRED>
+
+                <!ELEMENT Shared-Variable (#PCDATA)>
+                <!ATTLIST Shared-Variable key CDATA #REQUIRED>
+
+        <!ELEMENT UCS (#PCDATA)>
+        <!ATTLIST UCS uni CDATA #REQUIRED>
+
+        <!ELEMENT StateIndicator (SI-entry*)>
+        <!ATTLIST StateIndicator levels CDATA #REQUIRED>
+
+            <!ELEMENT SI-entry ((Execute|Statements|UserFunction),Parser+)>
+            <!ATTLIST SI-entry level     CDATA #REQUIRED>
+            <!ATTLIST SI-entry pc        CDATA #REQUIRED>
+            <!ATTLIST SI-entry line      CDATA #REQUIRED>
+            <!ATTLIST SI-entry vid_arg_A CDATA #IMPLIED>
+            <!ATTLIST SI-entry Id_arg_F  CDATA #IMPLIED>
+            <!ATTLIST SI-entry vid_arg_B CDATA #IMPLIED>
+
+                <!ELEMENT Statements (UCS)>
+
+                <!ELEMENT Execute (UCS)>
+
+                <!ELEMENT UserFunction (#PCDATA)>
+                <!ATTLIST UserFunction ufun-name    CDATA #REQUIRED>
+                <!ATTLIST UserFunction symbol-level CDATA #REQUIRED>
+
+                <!ELEMENT Parser (Token*)>
+                <!ATTLIST Parser assign-pending CDATA #REQUIRED>
+                <!ATTLIST Parser lookahead-high CDATA #REQUIRED>
+                    <!ELEMENT Token (#PCDATA)>
+                    <!ATTLIST Token pc           CDATA #REQUIRED>
+                    <!ATTLIST Token tag          CDATA #REQUIRED>
+                    <!ATTLIST Token char         CDATA #IMPLIED>
+                    <!ATTLIST Token int          CDATA #IMPLIED>
+                    <!ATTLIST Token float        CDATA #IMPLIED>
+                    <!ATTLIST Token real         CDATA #IMPLIED>
+                    <!ATTLIST Token imag         CDATA #IMPLIED>
+                    <!ATTLIST Token sym          CDATA #IMPLIED>
+                    <!ATTLIST Token line         CDATA #IMPLIED>
+                    <!ATTLIST Token vid          CDATA #IMPLIED>
+                    <!ATTLIST Token index        CDATA #IMPLIED>
+                    <!ATTLIST Token fun-id       CDATA #IMPLIED>
+                    <!ATTLIST Token ufun-name    CDATA #IMPLIED>
+                    <!ATTLIST Token symbol-level CDATA #IMPLIED>
+                    <!ATTLIST Token comment  CDATA #IMPLIED>
+
+]>
+
+
+    <!-- hour/minute/second is )SAVE time in UTC (aka. GMT).
+         timezone is offset to UTC in seconds.
+         local time is UTC + offset -->
+<Workspace wsid="KeyedFiles" year="2014" month="5" day="15"
+           hour="15" minute="4" second="53" timezone="-18000"
+           saving_SVN="6645">
+
+  <Value flg="400" vid="0" parent="-1" rk="0"/>
+  <Value flg="400" vid="1" parent="-1" rk="0"/>
+  <Value flg="400" vid="2" parent="-1" rk="0"/>
+  <Value flg="400" vid="3" parent="-1" rk="0"/>
+  <Value flg="400" vid="4" parent="-1" rk="0"/>
+  <Value flg="400" vid="5" parent="-1" rk="0"/>
+  <Value flg="400" vid="6" parent="-1" rk="0"/>
+  <Value flg="400" vid="7" parent="-1" rk="0"/>
+  <Value flg="400" vid="8" parent="-1" rk="1" sh-0="22"/>
+  <Value flg="400" vid="9" parent="-1" rk="1" sh-0="31"/>
+  <Value flg="400" vid="10" parent="-1" rk="0"/>
+  <Value flg="400" vid="11" parent="-1" rk="0"/>
+  <Value flg="400" vid="12" parent="-1" rk="0"/>
+  <Value flg="400" vid="13" parent="-1" rk="0"/>
+  <Value flg="400" vid="14" parent="-1" rk="0"/>
+  <Value flg="400" vid="15" parent="-1" rk="0"/>
+  <Value flg="400" vid="16" parent="-1" rk="0"/>
+  <Value flg="400" vid="17" parent="-1" rk="0"/>
+  <Value flg="400" vid="18" parent="-1" rk="0"/>
+  <Value flg="400" vid="19" parent="-1" rk="1" sh-0="22"/>
+  <Value flg="400" vid="20" parent="-1" rk="1" sh-0="31"/>
+  <Value flg="400" vid="21" parent="-1" rk="0"/>
+  <Value flg="400" vid="22" parent="-1" rk="0"/>
+  <Value flg="400" vid="23" parent="-1" rk="0"/>
+  <Value flg="400" vid="24" parent="-1" rk="0"/>
+  <Value flg="400" vid="25" parent="-1" rk="0"/>
+  <Value flg="400" vid="26" parent="-1" rk="0"/>
+  <Value flg="400" vid="27" parent="-1" rk="0"/>
+  <Value flg="400" vid="28" parent="-1" rk="0"/>
+  <Value flg="400" vid="29" parent="-1" rk="0"/>
+  <Value flg="400" vid="30" parent="-1" rk="1" sh-0="21"/>
+  <Value flg="400" vid="31" parent="-1" rk="1" sh-0="31"/>
+  <Value flg="400" vid="32" parent="-1" rk="0"/>
+  <Value flg="400" vid="33" parent="-1" rk="0"/>
+  <Value flg="400" vid="34" parent="-1" rk="0"/>
+  <Value flg="400" vid="35" parent="-1" rk="0"/>
+  <Value flg="400" vid="36" parent="-1" rk="0"/>
+  <Value flg="400" vid="37" parent="-1" rk="0"/>
+  <Value flg="400" vid="38" parent="-1" rk="0"/>
+  <Value flg="400" vid="39" parent="-1" rk="0"/>
+  <Value flg="400" vid="40" parent="-1" rk="0"/>
+  <Value flg="400" vid="41" parent="-1" rk="1" sh-0="21"/>
+  <Value flg="400" vid="42" parent="-1" rk="1" sh-0="31"/>
+  <Value flg="400" vid="43" parent="-1" rk="0"/>
+  <Value flg="400" vid="44" parent="-1" rk="0"/>
+  <Value flg="400" vid="45" parent="-1" rk="0"/>
+  <Value flg="400" vid="46" parent="-1" rk="0"/>
+  <Value flg="400" vid="47" parent="-1" rk="0"/>
+  <Value flg="400" vid="48" parent="-1" rk="1" sh-0="1"/>
+  <Value flg="400" vid="49" parent="-1" rk="0"/>
+  <Value flg="400" vid="50" parent="-1" rk="1" sh-0="0"/>
+  <Value flg="400" vid="51" parent="-1" rk="0"/>
+  <Value flg="400" vid="52" parent="-1" rk="0"/>
+  <Value flg="400" vid="53" parent="-1" rk="1" sh-0="23"/>
+  <Value flg="400" vid="54" parent="-1" rk="1" sh-0="5"/>
+  <Value flg="400" vid="55" parent="-1" rk="1" sh-0="9"/>
+  <Value flg="400" vid="56" parent="-1" rk="1" sh-0="3"/>
+  <Value flg="400" vid="57" parent="-1" rk="1" sh-0="9"/>
+  <Value flg="400" vid="58" parent="-1" rk="0"/>
+  <Value flg="400" vid="59" parent="-1" rk="0"/>
+  <Value flg="400" vid="60" parent="-1" rk="0"/>
+  <Value flg="400" vid="61" parent="-1" rk="0"/>
+  <Value flg="400" vid="62" parent="-1" rk="0"/>
+  <Value flg="400" vid="63" parent="-1" rk="1" sh-0="25"/>
+  <Value flg="400" vid="64" parent="-1" rk="1" sh-0="3"/>
+  <Value flg="400" vid="65" parent="-1" rk="1" sh-0="3"/>
+  <Value flg="400" vid="66" parent="-1" rk="0"/>
+  <Value flg="400" vid="67" parent="-1" rk="1" sh-0="3"/>
+  <Value flg="400" vid="68" parent="-1" rk="0"/>
+  <Value flg="400" vid="69" parent="-1" rk="0"/>
+  <Value flg="400" vid="70" parent="-1" rk="0"/>
+  <Value flg="400" vid="71" parent="-1" rk="0"/>
+  <Value flg="400" vid="72" parent="-1" rk="0"/>
+  <Value flg="400" vid="73" parent="-1" rk="0"/>
+  <Value flg="400" vid="74" parent="-1" rk="1" sh-0="29"/>
+  <Value flg="400" vid="75" parent="-1" rk="1" sh-0="12"/>
+  <Value flg="400" vid="76" parent="-1" rk="0"/>
+  <Value flg="400" vid="77" parent="-1" rk="0"/>
+  <Value flg="400" vid="78" parent="-1" rk="1" sh-0="29"/>
+  <Value flg="400" vid="79" parent="-1" rk="1" sh-0="12"/>
+  <Value flg="400" vid="80" parent="-1" rk="0"/>
+  <Value flg="400" vid="81" parent="-1" rk="0"/>
+  <Value flg="400" vid="82" parent="-1" rk="0"/>
+  <Value flg="400" vid="83" parent="-1" rk="1" sh-0="37"/>
+  <Value flg="400" vid="84" parent="-1" rk="1" sh-0="7"/>
+  <Value flg="400" vid="85" parent="-1" rk="0"/>
+  <Value flg="400" vid="86" parent="-1" rk="0"/>
+  <Value flg="400" vid="87" parent="-1" rk="1" sh-0="37"/>
+  <Value flg="400" vid="88" parent="-1" rk="1" sh-0="7"/>
+  <Value flg="400" vid="89" parent="-1" rk="0"/>
+  <Value flg="400" vid="90" parent="-1" rk="0"/>
+  <Value flg="400" vid="91" parent="-1" rk="0"/>
+  <Value flg="400" vid="92" parent="-1" rk="0"/>
+  <Value flg="400" vid="93" parent="-1" rk="0"/>
+  <Value flg="400" vid="94" parent="-1" rk="0"/>
+  <Value flg="400" vid="95" parent="-1" rk="1" sh-0="14"/>
+  <Value flg="400" vid="96" parent="-1" rk="1" sh-0="17"/>
+  <Value flg="400" vid="97" parent="-1" rk="0"/>
+  <Value flg="400" vid="98" parent="-1" rk="0"/>
+  <Value flg="400" vid="99" parent="-1" rk="0"/>
+  <Value flg="400" vid="100" parent="-1" rk="0"/>
+  <Value flg="400" vid="101" parent="-1" rk="0"/>
+  <Value flg="400" vid="102" parent="-1" rk="0"/>
+  <Value flg="400" vid="103" parent="-1" rk="0"/>
+  <Value flg="400" vid="104" parent="-1" rk="0"/>
+  <Value flg="400" vid="105" parent="-1" rk="0"/>
+  <Value flg="400" vid="106" parent="-1" rk="0"/>
+  <Value flg="400" vid="107" parent="-1" rk="1" sh-0="27"/>
+  <Value flg="400" vid="108" parent="-1" rk="1" sh-0="31"/>
+  <Value flg="400" vid="109" parent="-1" rk="0"/>
+  <Value flg="400" vid="110" parent="-1" rk="0"/>
+  <Value flg="400" vid="111" parent="-1" rk="0"/>
+  <Value flg="400" vid="112" parent="-1" rk="0"/>
+  <Value flg="400" vid="113" parent="-1" rk="0"/>
+  <Value flg="400" vid="114" parent="-1" rk="0"/>
+  <Value flg="400" vid="115" parent="-1" rk="0"/>
+  <Value flg="400" vid="116" parent="-1" rk="0"/>
+  <Value flg="400" vid="117" parent="-1" rk="1" sh-0="13"/>
+  <Value flg="400" vid="118" parent="-1" rk="1" sh-0="25"/>
+  <Value flg="400" vid="119" parent="-1" rk="0"/>
+  <Value flg="400" vid="120" parent="-1" rk="0"/>
+  <Value flg="400" vid="121" parent="-1" rk="0"/>
+  <Value flg="400" vid="122" parent="-1" rk="0"/>
+  <Value flg="400" vid="123" parent="-1" rk="0"/>
+  <Value flg="400" vid="124" parent="-1" rk="0"/>
+  <Value flg="400" vid="125" parent="-1" rk="0"/>
+  <Value flg="400" vid="126" parent="-1" rk="0"/>
+  <Value flg="400" vid="127" parent="-1" rk="0"/>
+  <Value flg="400" vid="128" parent="-1" rk="1" sh-0="22"/>
+  <Value flg="400" vid="129" parent="-1" rk="1" sh-0="31"/>
+  <Value flg="400" vid="130" parent="-1" rk="0"/>
+  <Value flg="400" vid="131" parent="-1" rk="1" sh-0="32"/>
+  <Value flg="400" vid="132" parent="-1" rk="0"/>
+  <Value flg="400" vid="133" parent="-1" rk="0"/>
+  <Value flg="400" vid="134" parent="-1" rk="0"/>
+  <Value flg="400" vid="135" parent="-1" rk="0"/>
+  <Value flg="400" vid="136" parent="-1" rk="0"/>
+  <Value flg="400" vid="137" parent="-1" rk="1" sh-0="14"/>
+  <Value flg="400" vid="138" parent="-1" rk="1" sh-0="17"/>
+  <Value flg="400" vid="139" parent="-1" rk="0"/>
+  <Value flg="400" vid="140" parent="-1" rk="0"/>
+  <Value flg="400" vid="141" parent="-1" rk="0"/>
+  <Value flg="400" vid="142" parent="-1" rk="0"/>
+  <Value flg="400" vid="143" parent="-1" rk="0"/>
+  <Value flg="400" vid="144" parent="-1" rk="0"/>
+  <Value flg="400" vid="145" parent="-1" rk="0"/>
+  <Value flg="400" vid="146" parent="-1" rk="0"/>
+  <Value flg="400" vid="147" parent="-1" rk="0"/>
+  <Value flg="400" vid="148" parent="-1" rk="1" sh-0="13"/>
+  <Value flg="400" vid="149" parent="-1" rk="1" sh-0="31"/>
+  <Value flg="400" vid="150" parent="-1" rk="0"/>
+  <Value flg="400" vid="151" parent="-1" rk="1" sh-0="40"/>
+  <Value flg="400" vid="152" parent="-1" rk="1" sh-0="11"/>
+  <Value flg="400" vid="153" parent="-1" rk="0"/>
+  <Value flg="400" vid="154" parent="-1" rk="0"/>
+  <Value flg="400" vid="155" parent="-1" rk="1" sh-0="14"/>
+  <Value flg="400" vid="156" parent="-1" rk="1" sh-0="12"/>
+  <Value flg="400" vid="157" parent="-1" rk="0"/>
+  <Value flg="400" vid="158" parent="-1" rk="1" sh-0="50"/>
+  <Value flg="400" vid="159" parent="-1" rk="1" sh-0="24"/>
+  <Value flg="400" vid="160" parent="-1" rk="1" sh-0="45"/>
+  <Value flg="400" vid="161" parent="-1" rk="1" sh-0="12"/>
+  <Value flg="400" vid="162" parent="-1" rk="1" sh-0="30"/>
+  <Value flg="400" vid="163" parent="-1" rk="1" sh-0="49"/>
+  <Value flg="400" vid="164" parent="-1" rk="1" sh-0="2"/>
+  <Value flg="400" vid="165" parent="-1" rk="1" sh-0="13"/>
+  <Value flg="400" vid="166" parent="-1" rk="0"/>
+  <Value flg="400" vid="167" parent="-1" rk="0"/>
+  <Value flg="400" vid="168" parent="-1" rk="1" sh-0="21"/>
+  <Value flg="400" vid="169" parent="-1" rk="0"/>
+  <Value flg="400" vid="170" parent="-1" rk="0"/>
+  <Value flg="400" vid="171" parent="-1" rk="0"/>
+  <Value flg="400" vid="172" parent="-1" rk="0"/>
+  <Value flg="400" vid="173" parent="-1" rk="1" sh-0="6"/>
+  <Value flg="400" vid="174" parent="-1" rk="0"/>
+  <Value flg="400" vid="175" parent="-1" rk="0"/>
+  <Value flg="400" vid="176" parent="-1" rk="0"/>
+  <Value flg="400" vid="177" parent="-1" rk="1" sh-0="3"/>
+  <Value flg="400" vid="178" parent="-1" rk="0"/>
+  <Value flg="400" vid="179" parent="-1" rk="0"/>
+  <Value flg="400" vid="180" parent="-1" rk="0"/>
+  <Value flg="400" vid="181" parent="-1" rk="1" sh-0="256"/>
+  <Value flg="400" vid="182" parent="-1" rk="1" sh-0="4"/>
+  <Value flg="400" vid="183" parent="-1" rk="1" sh-0="21"/>
+  <Ravel vid="0" cells="³3"/>
+  <Ravel vid="1" cells="³2"/>
+  <Ravel vid="2" cells="³-14"/>
+  <Ravel vid="3" cells="³1"/>
+  <Ravel vid="4" cells="³0"/>
+  <Ravel vid="5" cells="³1"/>
+  <Ravel vid="6" cells="³1"/>
+  <Ravel vid="7" cells="³2"/>
+  <Ravel vid="8" cells="² where skey>=? limit 1⁰"/>
+  <Ravel vid="9" cells="²select skey, sdata, ldata from ⁰"/>
+  <Ravel vid="10" cells="³1"/>
+  <Ravel vid="11" cells="³3"/>
+  <Ravel vid="12" cells="³2"/>
+  <Ravel vid="13" cells="³-14"/>
+  <Ravel vid="14" cells="³1"/>
+  <Ravel vid="15" cells="³0"/>
+  <Ravel vid="16" cells="³1"/>
+  <Ravel vid="17" cells="³1"/>
+  <Ravel vid="18" cells="³2"/>
+  <Ravel vid="19" cells="² where skey⁰¹3C²=? limit 1⁰"/>
+  <Ravel vid="20" cells="²select skey, sdata, ldata from ⁰"/>
+  <Ravel vid="21" cells="³1"/>
+  <Ravel vid="22" cells="³3"/>
+  <Ravel vid="23" cells="³2"/>
+  <Ravel vid="24" cells="³-14"/>
+  <Ravel vid="25" cells="³1"/>
+  <Ravel vid="26" cells="³0"/>
+  <Ravel vid="27" cells="³1"/>
+  <Ravel vid="28" cells="³1"/>
+  <Ravel vid="29" cells="³2"/>
+  <Ravel vid="30" cells="² where skey⁰¹3C²? limit 1⁰"/>
+  <Ravel vid="31" cells="²select skey, sdata, ldata from ⁰"/>
+  <Ravel vid="32" cells="³1"/>
+  <Ravel vid="33" cells="³3"/>
+  <Ravel vid="34" cells="³2"/>
+  <Ravel vid="35" cells="³-14"/>
+  <Ravel vid="36" cells="³1"/>
+  <Ravel vid="37" cells="³0"/>
+  <Ravel vid="38" cells="³1"/>
+  <Ravel vid="39" cells="³1"/>
+  <Ravel vid="40" cells="³2"/>
+  <Ravel vid="41" cells="² where skey>? limit 1⁰"/>
+  <Ravel vid="42" cells="²select skey, sdata, ldata from ⁰"/>
+  <Ravel vid="43" cells="³1"/>
+  <Ravel vid="44" cells="³-5"/>
+  <Ravel vid="45" cells="³1"/>
+  <Ravel vid="46" cells="³80"/>
+  <Ravel vid="47" cells="³0"/>
+  <Ravel vid="48" cells="² ⁰"/>
+  <Ravel vid="49" cells="³10"/>
+  <Ravel vid="50" cells="² ⁰"/>
+  <Ravel vid="51" cells="³1"/>
+  <Ravel vid="52" cells="⁴1e-13"/>
+  <Ravel vid="53" cells="²Transaction rolled back⁰"/>
+  <Ravel vid="54" cells="²X F Y⁰"/>
+  <Ravel vid="55" cells="¹2192²rollback⁰"/>
+  <Ravel vid="56" cells="²F Y⁰"/>
+  <Ravel vid="57" cells="¹2192²rollback⁰"/>
+  <Ravel vid="58" cells="²X⁰"/>
+  <Ravel vid="59" cells="³0"/>
+  <Ravel vid="60" cells="³8"/>
+  <Ravel vid="61" cells="³3"/>
+  <Ravel vid="62" cells="³7"/>
+  <Ravel vid="63" cells="²Error loading SQL library⁰"/>
+  <Ravel vid="64" cells="²SQL⁰"/>
+  <Ravel vid="65" cells="²SQL⁰"/>
+  <Ravel vid="66" cells="³0"/>
+  <Ravel vid="67" cells="²SQL⁰"/>
+  <Ravel vid="68" cells="³4"/>
+  <Ravel vid="69" cells="³2"/>
+  <Ravel vid="70" cells="³1"/>
+  <Ravel vid="71" cells="³6"/>
+  <Ravel vid="72" cells="³5"/>
+  <Ravel vid="73" cells="³1"/>
+  <Ravel vid="74" cells="² (skey, ldata) values (?, ?);⁰"/>
+  <Ravel vid="75" cells="²insert into ⁰"/>
+  <Ravel vid="76" cells="³0"/>
+  <Ravel vid="77" cells="³1"/>
+  <Ravel vid="78" cells="² (skey, sdata) values (?, ?);⁰"/>
+  <Ravel vid="79" cells="²insert into ⁰"/>
+  <Ravel vid="80" cells="³2000"/>
+  <Ravel vid="81" cells="³0"/>
+  <Ravel vid="82" cells="³1"/>
+  <Ravel vid="83" cells="² set sdata=null,ldata=? where skey=?;⁰"/>
+  <Ravel vid="84" cells="²update ⁰"/>
+  <Ravel vid="85" cells="³0"/>
+  <Ravel vid="86" cells="³1"/>
+  <Ravel vid="87" cells="² set sdata=?,ldata=null where skey=?;⁰"/>
+  <Ravel vid="88" cells="²update ⁰"/>
+  <Ravel vid="89" cells="³2000"/>
+  <Ravel vid="90" cells="³1"/>
+  <Ravel vid="91" cells="³0"/>
+  <Ravel vid="92" cells="³1"/>
+  <Ravel vid="93" cells="³1"/>
+  <Ravel vid="94" cells="³2"/>
+  <Ravel vid="95" cells="² where skey=?;⁰"/>
+  <Ravel vid="96" cells="²select skey from ⁰"/>
+  <Ravel vid="97" cells="³14"/>
+  <Ravel vid="98" cells="³1"/>
+  <Ravel vid="99" cells="³3"/>
+  <Ravel vid="100" cells="³2"/>
+  <Ravel vid="101" cells="³-14"/>
+  <Ravel vid="102" cells="³1"/>
+  <Ravel vid="103" cells="³0"/>
+  <Ravel vid="104" cells="³1"/>
+  <Ravel vid="105" cells="³1"/>
+  <Ravel vid="106" cells="³2"/>
+  <Ravel vid="107" cells="² order by skey desc limit 1⁰"/>
+  <Ravel vid="108" cells="²select skey, sdata, ldata from ⁰"/>
+  <Ravel vid="109" cells="³1"/>
+  <Ravel vid="110" cells="³2"/>
+  <Ravel vid="111" cells="³1"/>
+  <Ravel vid="112" cells="³-14"/>
+  <Ravel vid="113" cells="³0"/>
+  <Ravel vid="114" cells="³1"/>
+  <Ravel vid="115" cells="³1"/>
+  <Ravel vid="116" cells="³2"/>
+  <Ravel vid="117" cells="² where skey=?⁰"/>
+  <Ravel vid="118" cells="²select sdata, ldata from ⁰"/>
+  <Ravel vid="119" cells="³1"/>
+  <Ravel vid="120" cells="³3"/>
+  <Ravel vid="121" cells="³2"/>
+  <Ravel vid="122" cells="³-14"/>
+  <Ravel vid="123" cells="³1"/>
+  <Ravel vid="124" cells="³0"/>
+  <Ravel vid="125" cells="³1"/>
+  <Ravel vid="126" cells="³1"/>
+  <Ravel vid="127" cells="³2"/>
+  <Ravel vid="128" cells="² order by skey limit 1⁰"/>
+  <Ravel vid="129" cells="²select skey, sdata, ldata from ⁰"/>
+  <Ravel vid="130" cells="³1"/>
+  <Ravel vid="131" cells="²select file_name from apl_files;⁰"/>
+  <Ravel vid="132" cells="³1"/>
+  <Ravel vid="133" cells="³2"/>
+  <Ravel vid="134" cells="³1"/>
+  <Ravel vid="135" cells="³0"/>
+  <Ravel vid="136" cells="³1"/>
+  <Ravel vid="137" cells="² where skey=?;⁰"/>
+  <Ravel vid="138" cells="²select skey from ⁰"/>
+  <Ravel vid="139" cells="³1"/>
+  <Ravel vid="140" cells="³3"/>
+  <Ravel vid="141" cells="³2"/>
+  <Ravel vid="142" cells="³-14"/>
+  <Ravel vid="143" cells="³1"/>
+  <Ravel vid="144" cells="³0"/>
+  <Ravel vid="145" cells="³1"/>
+  <Ravel vid="146" cells="³1"/>
+  <Ravel vid="147" cells="³2"/>
+  <Ravel vid="148" cells="² where skey=?⁰"/>
+  <Ravel vid="149" cells="²select skey, sdata, ldata from ⁰"/>
+  <Ravel vid="150" cells="³1"/>
+  <Ravel vid="151" cells="²delete from apl_files where file_name=?;⁰"/>
+  <Ravel vid="152" cells="²drop table ⁰"/>
+  <Ravel vid="153" cells="³1"/>
+  <Ravel vid="154" cells="³2"/>
+  <Ravel vid="155" cells="² where skey=?;⁰"/>
+  <Ravel vid="156" cells="²delete from ⁰"/>
+  <Ravel vid="157" cells="³1"/>
+  <Ravel vid="158" cells="²file_name character varying (80) not null uni⁰
+    ²que);⁰"/>
+  <Ravel vid="159" cells="²create table apl_files (⁰"/>
+  <Ravel vid="160" cells="²insert into apl_files (file_name) values (?);⁰"/>
+  <Ravel vid="161" cells="²ldata text);⁰"/>
+  <Ravel vid="162" cells="²sdata CHARACTER VARYING(2000),⁰"/>
+  <Ravel vid="163" cells="²skey CHARACTER VARYING(80) NOT NULL PRIMARY K⁰
+    ²EY, ⁰"/>
+  <Ravel vid="164" cells="² (⁰"/>
+  <Ravel vid="165" cells="²CREATE TABLE ⁰"/>
+  <Ravel vid="166" cells="³1"/>
+  <Ravel vid="167" cells="³2"/>
+  <Ravel vid="168" cells="²select count(*) from ⁰"/>
+  <Ravel vid="169" cells="³1"/>
+  <Ravel vid="170" cells="³0"/>
+  <Ravel vid="171" cells="³0"/>
+  <Ravel vid="172" cells="³0"/>
+  <Ravel vid="173" cells="².,⁰¹22C6²0_⁰¹AF"/>
+  <Ravel vid="174" cells="³0"/>
+  <Ravel vid="175" cells="³1"/>
+  <Ravel vid="176" cells="³0"/>
+  <Ravel vid="177" cells="¹8¹D¹A
+    "/>
+  <Ravel vid="178" cells="³0"/>
+  <Ravel vid="179" cells="³0"/>
+  <Ravel vid="180" cells="³0"/>
+  <Ravel vid="181" cells="¹0¹1¹2¹3¹4¹5¹6¹7¹8¹9¹A
+    ¹B¹C¹D¹E¹F¹10¹11¹12¹13¹14¹15¹16¹17¹18¹19¹1A¹1B¹1C¹1D¹1E¹1F² !⁰¹22²#$⁰
+    ²%⁰¹26²'()*+,-./0123456789:;⁰¹3C²=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_⁰
+    ²`abcdefghijklmnopqrstuvwxyz{|}~⁰¹7F¹A5¹20AC¹21C4¹2227¹223C¹226C
+    ¹22C6¹22F8¹2338¹233A¹233C¹233E¹2341¹A1¹2344¹2345¹2395¹235E¹2339¹2346
+    ¹2364¹2347¹2348¹234A¹22A4¹3BB¹234D¹234F¹A3¹22A5¹2376¹2336¹2350¹2351
+    ¹3C7¹2354¹2356¹2357¹2358¹235A¹235B¹2308¹235C¹2362¹222A¹2368¹2355
+    ¹234E¹236C¹236A¹2223¹2502¹2524¹235F¹2206¹2207¹2192¹2563¹2551¹2557
+    ¹255D¹2190¹230A¹2510¹2514¹2534¹252C¹251C¹2500¹253C¹2191¹2193¹2554
+    ¹255A¹2569¹2566¹2560¹2550¹256C¹2261¹2378¹2377¹2235¹2337¹2342¹233B
+    ¹22A2¹22A3¹25CA¹2518¹250C¹2588¹2584¹258C¹2590¹2580¹237A¹2379¹2282
+    ¹2283¹235D¹2372¹2374¹2371¹233D¹2296¹25CB¹2228¹2373¹2349¹2208¹2229
+    ¹233F¹2340¹2265¹2264¹2260¹D7¹F7¹2359¹2218¹2375¹236B¹234B¹2352¹AF¹A8
+    ¹A0"/>
+  <Ravel vid="182" cells="³-1³0³0³0"/>
+  <Ravel vid="183" cells="²SystemVariable.cc:671⁰"/>
+  <SymbolTable size="78">
+    <Symbol name="BIG∆CHANGE" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="BIG∆NEW" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="EN1" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="Exists" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="F" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="FINDDB" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="KFGet" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="KF∆Close" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²KF⁰¹2206²Close kf⁰¹A
+          ²r⁰¹2190²''⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Count" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²KF⁰¹2206²Count kf;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²''⁰¹2374²('select count(*) from ',(⁰¹2283²kf[2])) SQL⁰¹2206
+          ²Select[kf[1]]''⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Create" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²db KF⁰¹2206²Create file;cmd⁰¹A
+          ²cmd⁰¹2190²'CREATE TABLE ',file,' ('⁰¹A
+          ²cmd⁰¹2190²cmd,'skey CHARACTER VARYING(80) NOT NULL PRIMARY KE⁰
+          ²Y, '⁰¹A
+          ²cmd⁰¹2190²cmd,'sdata CHARACTER VARYING(2000),'⁰¹A
+          ²cmd⁰¹2190²cmd,'ldata text);'⁰¹A
+          ²r⁰¹2190²cmd SQL⁰¹2206²Exec[db] ''⁰¹A
+          ²r⁰¹2190²db file⁰¹A
+          ²'insert into apl_files (file_name) values (?);' SQL⁰¹2206²Exe⁰
+          ²c[db] ⁰¹2282²file⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆DBConnect" stack-size="1">
+      <Function>
+        <UCS uni="²db⁰¹2190²type KF⁰¹2206²DBConnect params⁰¹A
+          ²db⁰¹2190²type SQL⁰¹2206²Connect params⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆DBCreate" stack-size="1">
+      <Function>
+        <UCS uni="²db⁰¹2190²type KF⁰¹2206²DBCreate params;cmd⁰¹A
+          ²db⁰¹2190²type SQL⁰¹2206²Connect params⁰¹A
+          ²cmd⁰¹2190²'create table apl_files ('⁰¹A
+          ²cmd⁰¹2190²cmd,'file_name character varying (80) not null uniq⁰
+          ²ue);'⁰¹A
+          ²cmd SQL⁰¹2206²Exec[db]''⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Delete" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²kf KF⁰¹2206²Delete key;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²('delete from ',(⁰¹2283²kf[2]),' where skey=?;') SQL⁰¹2206²Ex⁰
+          ²ec[kf[1]]⁰¹2282¹2355²key⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Disconnect" stack-size="1">
+      <Function>
+        <UCS uni="²KF⁰¹2206²Disconnect db⁰¹A
+          ²SQL⁰¹2206²Disconnect db⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Drop" stack-size="1">
+      <Function>
+        <UCS uni="²db KF⁰¹2206²Drop file⁰¹A
+          ²('drop table ',file) SQL⁰¹2206²Exec[db]''⁰¹A
+          ²'delete from apl_files where file_name=?;' SQL⁰¹2206²Exec[db]⁰
+          ² ⁰¹2282²file⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆EQ" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²kf KF⁰¹2206²EQ key;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²('select skey, sdata, ldata from ',(⁰¹2283²kf[2]),' w⁰
+          ²here skey=?') SQL⁰¹2206²Select[kf[1]]⁰¹2282²,key⁰¹A
+          ¹2192²(1=⁰¹2374¹2374²r)/0⁰¹A
+          ²r⁰¹2190²r[1] ⁰¹AF²14 ⁰¹2395²CR (⁰¹2283²r[2]),⁰¹2283²(r⁰¹2190²,⁰
+          ²r)[3]⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Exists" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²kf KF⁰¹2206²Exists key;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²~(1=⁰¹2374¹2374²r)⁰¹2227²0=1⁰¹2191¹2374²r⁰¹2190²('sel⁰
+          ²ect skey from ',(⁰¹2283²kf[2]),' where skey=?;') SQL⁰¹2206²Se⁰
+          ²lect[kf[1]]⁰¹2282¹2355²key⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆FileExists" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²db KF⁰¹2206²FileExists file⁰¹A
+          ²r⁰¹2190²(⁰¹2282²,file)⁰¹220A²KF⁰¹2206²Files db⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Files" stack-size="1">
+      <Function>
+        <UCS uni="²files⁰¹2190²KF⁰¹2206²Files db⁰¹A
+          ²files⁰¹2190²'select file_name from apl_files;' SQL⁰¹2206²Sele⁰
+          ²ct[db]''⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆First" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²KF⁰¹2206²First kf;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²('select skey, sdata, ldata from ',(⁰¹2283²kf[2]),' o⁰
+          ²rder by skey limit 1') SQL⁰¹2206²Select[kf[1]]''⁰¹A
+          ¹2192²(1=⁰¹2374¹2374²r)/0⁰¹A
+          ²r⁰¹2190²r[1] ⁰¹AF²14 ⁰¹2395²CR (⁰¹2283²r[2]),⁰¹2283²(r⁰¹2190²,⁰
+          ²r)[3]⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆GE" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²kf KF⁰¹2206²GE key;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²('select skey, sdata, ldata from ',(⁰¹2283²kf[2]),' w⁰
+          ²here skey>=? limit 1') SQL⁰¹2206²Select[kf[1]]⁰¹2282²,key⁰¹A
+          ¹2192²(1=⁰¹2374¹2374²r)/0⁰¹A
+          ²r⁰¹2190²r[1] ⁰¹AF²14 ⁰¹2395²CR (⁰¹2283²r[2]),⁰¹2283²(r⁰¹2190²,⁰
+          ²r)[3]⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆GT" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²kf KF⁰¹2206²GT key;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²('select skey, sdata, ldata from ',(⁰¹2283²kf[2]),' w⁰
+          ²here skey>? limit 1') SQL⁰¹2206²Select[kf[1]]⁰¹2282²,key⁰¹A
+          ¹2192²(1=⁰¹2374¹2374²r)/0⁰¹A
+          ²r⁰¹2190²r[1] ⁰¹AF²14 ⁰¹2395²CR (⁰¹2283²r[2]),⁰¹2283²(r⁰¹2190²,⁰
+          ²r)[3]⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Get" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²kf KF⁰¹2206²Get key;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²('select sdata, ldata from ',(⁰¹2283²kf[2]),' where s⁰
+          ²key=?') SQL⁰¹2206²Select[kf[1]]⁰¹2282²key⁰¹A
+          ¹2192²(1=⁰¹2374¹2374²r)/0⁰¹A
+          ²r⁰¹2190¹AF²14 ⁰¹2395²CR (⁰¹2283²r[1]),⁰¹2283²(r⁰¹2190²,r)[2]⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆KFPut" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="KF∆LE" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²kf KF⁰¹2206²LE key;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²('select skey, sdata, ldata from ',(⁰¹2283²kf[2]),' w⁰
+          ²here skey⁰¹3C²=? limit 1') SQL⁰¹2206²Select[kf[1]]⁰¹2282²,key⁰¹A
+          ¹2192²(1=⁰¹2374¹2374²r)/0⁰¹A
+          ²r⁰¹2190²r[1] ⁰¹AF²14 ⁰¹2395²CR (⁰¹2283²r[2]),⁰¹2283²(r⁰¹2190²,⁰
+          ²r)[3]⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆LT" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²kf KF⁰¹2206²LT key;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²('select skey, sdata, ldata from ',(⁰¹2283²kf[2]),' w⁰
+          ²here skey⁰¹3C²? limit 1') SQL⁰¹2206²Select[kf[1]]⁰¹2282²,key⁰¹A
+          ¹2192²(1=⁰¹2374¹2374²r)/0⁰¹A
+          ²r⁰¹2190²r[1] ⁰¹AF²14 ⁰¹2395²CR (⁰¹2283²r[2]),⁰¹2283²(r⁰¹2190²,⁰
+          ²r)[3]⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Last" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²KF⁰¹2206²Last kf;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²r⁰¹2190²('select skey, sdata, ldata from ',(⁰¹2283²kf[2]),' o⁰
+          ²rder by skey desc limit 1') SQL⁰¹2206²Select[kf[1]]''⁰¹A
+          ¹2192²(1=⁰¹2374¹2374²r)/0⁰¹A
+          ²r⁰¹2190²r[1] ⁰¹AF²14 ⁰¹2395²CR (⁰¹2283²r[2]),⁰¹2283²(r⁰¹2190²,⁰
+          ²r)[3]⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Open" stack-size="1">
+      <Function>
+        <UCS uni="²r⁰¹2190²db KF⁰¹2206²Open file⁰¹A
+          ²r⁰¹2190²db file⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KF∆Put" stack-size="1">
+      <Function>
+        <UCS uni="²kf KF⁰¹2206²Put[key] data;r;tbl;⁰¹2395²IO⁰¹A
+          ¹2395²IO⁰¹2190²1⁰¹A
+          ²data⁰¹2190²14 ⁰¹2395²CR data⁰¹A
+          ²r⁰¹2190²('select skey from ',(tbl⁰¹2190¹2283²kf[2]),' where s⁰
+          ²key=?;') SQL⁰¹2206²Select[kf[1]]⁰¹2282²key⁰¹2190¹2355²key⁰¹A
+          ¹2192²((1=⁰¹2374¹2374²r)⁰¹2227²0=1⁰¹2191¹2374²r)/NEW⁰¹A
+          ¹2192²(2000⁰¹3C¹2374²data)/BIG⁰¹2206²CHANGE⁰¹A
+          ²r⁰¹2190²('update ',tbl,' set sdata=?,ldata=null where skey=?;⁰
+          ²')SQL⁰¹2206²Exec[kf[1]] data key⁰¹A
+          ¹2192²0⁰¹A
+          ²BIG⁰¹2206²CHANGE: r⁰¹2190²('update ',tbl,' set sdata=null,lda⁰
+          ²ta=? where skey=?;')SQL⁰¹2206²Exec[kf[1]] data key⁰¹A
+          ¹2192²0⁰¹A
+          ²NEW:⁰¹2192²(2000⁰¹3C¹2374²data)/BIG⁰¹2206²NEW⁰¹A
+          ²r⁰¹2190²('insert into ',tbl,' (skey, sdata) values (?, ?);')S⁰
+          ²QL⁰¹2206²Exec[kf[1]] key data⁰¹A
+          ¹2192²0⁰¹A
+          ²BIG⁰¹2206²NEW:r⁰¹2190²('insert into ',tbl,' (skey, ldata) val⁰
+          ²ues (?, ?);')SQL⁰¹2206²Exec[kf[1]] key data⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="KG∆Count" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="KG∆Get" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="NEW" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="SKIP" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="SQL" stack-size="1">
+      <Function native="1">
+        <UCS uni="²/home/blake/Backup/apl-sqlite.git/lib_sql.so⁰"/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆Begin" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²SQL⁰¹2206²Begin Y⁰¹A
+          ²Z⁰¹2190²SQL[5] Y⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆Commit" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²SQL⁰¹2206²Commit Y⁰¹A
+          ²Z⁰¹2190²SQL[6] Y⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆Connect" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²X SQL⁰¹2206²Connect Y⁰¹A
+          ²Z⁰¹2190²X SQL[1] Y⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆Disconnect" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²SQL⁰¹2206²Disconnect Y⁰¹A
+          ²Z⁰¹2190²SQL[2] Y⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆Exec" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²X SQL⁰¹2206²Exec[db] Y⁰¹A
+          ²Z⁰¹2190²X SQL[4,db] Y⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆LoadLib" stack-size="1">
+      <Function>
+        <UCS uni="²SQL⁰¹2206²LoadLib path⁰¹A
+          ¹2192²(0⁰¹2260¹2395²NC 'SQL')/SKIP⁰¹A
+          ¹2192²('SQL'⁰¹2261²path ⁰¹2395²FX 'SQL')/SKIP⁰¹A
+          ¹2395²ES 'Error loading SQL library'⁰¹A
+          ²SKIP:⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆Rollback" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²SQL⁰¹2206²Rollback Y⁰¹A
+          ²Z⁰¹2190²SQL[7] Y⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆Select" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²X SQL⁰¹2206²Select[db] Y⁰¹A
+          ²Z⁰¹2190²X SQL[3,db] Y⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆Tables" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²SQL⁰¹2206²Tables Y⁰¹A
+          ²Z⁰¹2190²SQL[8] Y⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="SQL∆WithTransaction" stack-size="1">
+      <Function>
+        <UCS uni="²Z⁰¹2190²X (F SQL⁰¹2206²WithTransaction FINDDB) Y;resu⁰
+          ²lt⁰¹A
+          ²SQL⁰¹2206²Begin FINDDB⁰¹A
+          ¹2192²(0⁰¹2260¹2395²NC 'X')/dyadic⁰¹A
+          ²result ⁰¹2190² '⁰¹2192²rollback' ⁰¹2395²EA 'F Y'⁰¹A
+          ¹2192²commit⁰¹A
+          ²dyadic:⁰¹A
+          ²result ⁰¹2190² '⁰¹2192²rollback' ⁰¹2395²EA 'X F Y'⁰¹A
+          ²commit:⁰¹A
+          ²SQL⁰¹2206²Commit FINDDB⁰¹A
+          ²Z ⁰¹2190² result⁰¹A
+          ¹2192²end⁰¹A
+          ²rollback:⁰¹A
+          ²SQL⁰¹2206²Rollback FINDDB⁰¹A
+          ¹2395²ES ⁰¹22²Transaction rolled back⁰¹22¹A
+          ²end:⁰¹A
+          "/>
+      </Function>
+    </Symbol>
+
+    <Symbol name="X" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="Y" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="Z" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="cmd" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="commit" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="data" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="db" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="dyadic" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="end" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="f" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="file" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="files" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="key" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="kf" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="ks" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="params" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="path" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="r" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="result" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="rollback" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="sdf" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="skip" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="table" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="tbl" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="type" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="x" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="xdf" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="z" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="λ" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="χ" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="⍵" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="⍶" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="⍹" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+    <Symbol name="⍺" stack-size="1">
+      <unused-name/>
+    </Symbol>
+
+  </SymbolTable>
+
+  <Symbol name="⎕AI" stack-size="1">
+    <Variable vid="182"/>
+  </Symbol>
+
+  <Symbol name="⎕ARG" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <Symbol name="⎕AV" stack-size="1">
+    <Variable vid="181"/>
+  </Symbol>
+
+  <Symbol name="⎕EM" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <Symbol name="⎕ET" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <Symbol name="⎕LC" stack-size="1">
+    <Variable vid="180"/>
+  </Symbol>
+
+  <Symbol name="⎕PT" stack-size="1">
+    <Variable vid="179"/>
+  </Symbol>
+
+  <Symbol name="⎕SVE" stack-size="1">
+    <Variable vid="178"/>
+  </Symbol>
+
+  <Symbol name="⎕TC" stack-size="1">
+    <Variable vid="177"/>
+  </Symbol>
+
+  <Symbol name="⎕TS" stack-size="1">
+    <Variable vid="176"/>
+  </Symbol>
+
+  <Symbol name="⎕UL" stack-size="1">
+    <Variable vid="175"/>
+  </Symbol>
+
+  <Symbol name="⎕WA" stack-size="1">
+    <Variable vid="174"/>
+  </Symbol>
+
+  <Symbol name="⎕CT" stack-size="1">
+    <Variable vid="52"/>
+  </Symbol>
+
+  <Symbol name="⎕FC" stack-size="1">
+    <Variable vid="173"/>
+  </Symbol>
+
+  <Symbol name="⎕IO" stack-size="1">
+    <Variable vid="51"/>
+  </Symbol>
+
+  <Symbol name="⎕L" stack-size="1">
+    <Variable vid="172"/>
+  </Symbol>
+
+  <Symbol name="⎕LX" stack-size="1">
+    <Variable vid="50"/>
+  </Symbol>
+
+  <Symbol name="⎕PP" stack-size="1">
+    <Variable vid="49"/>
+  </Symbol>
+
+  <Symbol name="⎕PR" stack-size="1">
+    <Variable vid="48"/>
+  </Symbol>
+
+  <Symbol name="⎕PS" stack-size="1">
+    <Variable vid="47"/>
+  </Symbol>
+
+  <Symbol name="⎕PW" stack-size="1">
+    <Variable vid="46"/>
+  </Symbol>
+
+  <Symbol name="⎕R" stack-size="1">
+    <Variable vid="171"/>
+  </Symbol>
+
+  <Symbol name="⎕RL" stack-size="1">
+    <Variable vid="45"/>
+  </Symbol>
+
+  <Symbol name="⎕SYL" stack-size="1">
+    <Variable vid="170"/>
+  </Symbol>
+
+  <Symbol name="⎕TZ" stack-size="1">
+    <Variable vid="44"/>
+  </Symbol>
+
+  <Symbol name="⍺" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <Symbol name="⍶" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <Symbol name="χ" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <Symbol name="λ" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <Symbol name="⍵" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <Symbol name="⍹" stack-size="1">
+    <unused-name/>
+  </Symbol>
+
+  <StateIndicator levels="0">
+  </StateIndicator>
+
+</Workspace>
+    

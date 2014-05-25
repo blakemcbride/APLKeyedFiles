@@ -5,9 +5,11 @@ The SQL library must be built prior to using the keyed file system.
 See SQL_README.txt
 
 The keyed file system utilizes the workspace named KeyedFiles.  This
-is contained in a file names KeyedFiles.xml
-This workspace contains all of the functions you will need.
-You may need to copy this file into your workspaces directory.
+is contained in a file names KeyedFiles.xml This workspace contains
+all of the functions you will need.  The SQL functions (the ones who's
+names begin with SQL) in this workspace were written by Elias
+Mårtenson.  You may need to copy this file into your workspaces
+directory.
 
 After loading the KeyedFiles workspace, you will need to load the SQL
 shared library.  You can do this with the following command:

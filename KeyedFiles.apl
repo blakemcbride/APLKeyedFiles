@@ -2,7 +2,7 @@
 
  ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
 ⍝
-⍝ KeyedFiles 2014-05-26 10:58:05 (GMT-5)
+⍝ KeyedFiles 2014-07-14 16:53:55 (GMT-5)
 ⍝
  ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
 
@@ -16,38 +16,41 @@
 ∇
 
 ∇r←db KF∆Create file;cmd
+ ⎕ES(db KF∆FileExists file)/'FILE ALREADY EXISTS ERROR'
  cmd←'CREATE TABLE ',file,' ('
  cmd←cmd,'skey CHARACTER VARYING(80) NOT NULL PRIMARY KEY, '
  cmd←cmd,'sdata CHARACTER VARYING(2000),'
  cmd←cmd,'ldata text);'
  r←cmd SQL∆Exec[db] ''
+ r←'insert into _apl_keyed_files (file_name) values (?);' SQL∆Exec[db] ⊂file
  r←db file
- 'insert into apl_files (file_name) values (?);' SQL∆Exec[db] ⊂file
 ∇
 
 ∇db←type KF∆DBConnect params
+ ⍎(0=⎕NC 'SQL')/'⎕ES(''SQL''≢''lib_sql.so''⎕FX''SQL'')/''Error loading SQL library'''
  db←type SQL∆Connect params
 ∇
 
 ∇db←type KF∆DBCreate params;cmd
+ ⍎(0=⎕NC 'SQL')/'⎕ES(''SQL''≢''lib_sql.so''⎕FX''SQL'')/''Error loading SQL library'''
  db←type SQL∆Connect params
- cmd←'create table apl_files ('
+ cmd←'create table _apl_keyed_files ('
  cmd←cmd,'file_name character varying (80) not null unique);'
- cmd SQL∆Exec[db]''
+ cmd←cmd SQL∆Exec[db]''
 ∇
 
-∇r←kf KF∆Delete key;⎕IO
+∇r←kf KF∆Delete key;⎕IO;t
  ⎕IO←1
- ('delete from ',(⊃kf[2]),' where skey=?;') SQL∆Exec[kf[1]]⊂⍕key
+ t←('delete from ',(⊃kf[2]),' where skey=?;') SQL∆Exec[kf[1]]⊂⍕key
 ∇
 
 ∇KF∆Disconnect db
  SQL∆Disconnect db
 ∇
 
-∇db KF∆Drop file
- ('drop table ',file) SQL∆Exec[db]''
- 'delete from apl_files where file_name=?;' SQL∆Exec[db] ⊂file
+∇db KF∆Drop file;t
+ t←('drop table ',file) SQL∆Exec[db]''
+ t←'delete from _apl_keyed_files where file_name=?;' SQL∆Exec[db] ⊂file
 ∇
 
 ∇r←kf KF∆EQ key;⎕IO
@@ -67,7 +70,7 @@
 ∇
 
 ∇files←KF∆Files db
- files←'select file_name from apl_files;' SQL∆Select[db]''
+ files←'select file_name from _apl_keyed_files;' SQL∆Select[db]''
 ∇
 
 ∇r←KF∆First kf;⎕IO
@@ -120,6 +123,7 @@
 ∇
 
 ∇r←db KF∆Open file
+ ⎕ES(~db KF∆FileExists file)/'FILE DOES NOT EXIST'
  r←db file
 ∇
 
@@ -139,7 +143,16 @@
  BIG∆NEW:r←('insert into ',tbl,' (skey, ldata) values (?, ?);')SQL∆Exec[kf[1]] key data
 ∇
 
-⍝ function SQL has ufun1 pointer 0!
+∇z←fnm KF∆Rename[db] nfnm
+ ⎕ES(0=⎕NC'fnm')/'MISSING ARGUMENT'
+ ⎕ES((0=⍴,fnm)∨(' '≠1↑0⍴fnm)∨(1<⍴⍴fnm)∨1<≡fnm)/'INVALID ORIGINAL FILE NAME'
+ ⎕ES((0=⍴,nfnm)∨(' '≠1↑0⍴nfnm)∨(1<⍴⍴nfnm)∨1<≡nfnm)/'INVALID NEW FILE NAME'
+ ⎕ES(~db KF∆FileExists fnm)/'ORIGINAL FILE NAME DOES NOT EXIST'
+ ⎕ES(db KF∆FileExists nfnm)/'NEW FILE NAME ALREADY EXISTS'
+ '⎕ES''RENAME ERROR'''⎕EA'z←(''alter table '',fnm,'' rename to '',nfnm,'';'') SQL∆Exec[db]'''''
+ '⎕ES''RENAME ERROR'''⎕EA'z←''update _apl_keyed_files set file_name=? where file_name=?;'' SQL∆Exec[db] nfnm fnm'
+ z←db nfnm
+∇
 
 ∇Z←SQL∆Begin Y
  Z←SQL[5] Y
@@ -221,4 +234,6 @@
 ⎕RL←1
 
 ⎕TZ←-5
+
+⎕X←0
 

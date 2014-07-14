@@ -1,8 +1,8 @@
 
 Keyed File system instructions
 
-The SQL library must be built prior to using the keyed file system.
-See SQL_README.txt
+GNU APL must be built with SQL support prior to using the component
+file system.  See SQL_README.txt
 
 The keyed file system utilizes the workspace named KeyedFiles.  This
 is contained in a file names KeyedFiles.xml This workspace contains
@@ -10,14 +10,6 @@ all of the functions you will need.  The SQL functions (the ones who's
 names begin with SQL) in this workspace were written by Elias
 Mårtenson.  You may need to copy this file into your workspaces
 directory.
-
-After loading the KeyedFiles workspace, you will need to load the SQL
-shared library.  You can do this with the following command:
-
-SQL∆LoadLib '/home/blake/Backup/apl-sqlite.git/lib_sql.so'
-
-Your complete path to lib_sql.so (created via the instructions in
-SQL_README.txt) will be different.
 
 In the instructions that follow, the following variables have the
 specified meanings:
@@ -85,6 +77,8 @@ kf KF∆Delete key                       delete key/data from file
 kf←KF∆Close kf                         close file
 
 db KF∆Drop 'myfile'                    delete whole file
+
+kf←'oldname' KF∆Rename[db] 'newname'	rename file
 
 files←KF∆Files db                      list of existing files
 

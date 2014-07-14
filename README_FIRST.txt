@@ -24,8 +24,9 @@ Subversion:  http://svn.savannah.gnu.org/svn/apl/trunk
 
 
 SQL Interface by  Elias Mårtenson <lokedhs@gmail.com>
-GIT:  https://github.com/lokedhs/apl-sqlite.git
 This library provides an SQL interface to Sqlite & PostgreSQL
+It is now a part of GNU APL so that you do not
+need to load or build this separately.
 
 
 Instructions

@@ -8,7 +8,7 @@ Sqlite and PostgreSQL.
 
 It is now a part of GNU APL so that you do not need to load or build
 this separately.  However, when building GNU APL you must be sure to
-include the database development libraries.  Under LinuxMint or Ubunto
+include the database development libraries.  Under LinuxMint or Ubuntu
 these are:
 
 
@@ -18,4 +18,11 @@ these are:
 	libpq5
 
 
+Under Fedora these packages are needed:
+
+	sqlite
+	sqlite-devel
+	libpq
+	libpq-devel
+	
 

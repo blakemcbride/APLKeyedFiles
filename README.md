@@ -1,7 +1,7 @@
 
 A Keyed File System for GNU APL
 ===============================
-Blake McBride (blake@arahant.com)
+Blake McBride (blake@mcbridemail.com)
 
 This package provides a keyed file system for GNU APL.  Keys are
 numbers or strings (character vectors).  The data associated can be
@@ -18,6 +18,8 @@ http://www.gnu.org/software/apl/apl.html
 Subversion:  http://svn.savannah.gnu.org/svn/apl/trunk
 
 
-SQL Interface by  Elias Mårtenson <lokedhs@gmail.com>
+SQL Interface by  Elias MÃ¥rtenson <lokedhs@gmail.com>
 GIT:  https://github.com/lokedhs/apl-sqlite.git
 This library provides an SQL interface to Sqlite & PostgreSQL
+
+Source code available at:  [https://github.com/blakemcbride/APLKeyedFiles](https://github.com/blakemcbride/APLKeyedFiles)
